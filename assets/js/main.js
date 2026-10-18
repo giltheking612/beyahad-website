@@ -1,14 +1,7 @@
-/* ביחד נתקן — landing page behaviour */
+/* ביחד נתקן — priorities poll behaviour. Language switching lives in i18n.js. */
 (function () {
   'use strict';
 
-  /* ---- Footer year ---------------------------------------------------- */
-  document.querySelectorAll('[data-current-year]').forEach(function (el) {
-    el.textContent = String(new Date().getFullYear());
-  });
-
-  /* ---- Priorities poll ------------------------------------------------ */
-  // Full class strings so Tailwind's content scanner keeps these utilities.
   var ACCENT_RING = {
     primary: 'ring-primary',
     secondary: 'ring-secondary',
@@ -22,6 +15,7 @@
 
   var options = Array.prototype.slice.call(poll.querySelectorAll('[data-poll-option]'));
   var status = document.querySelector('[data-poll-status]');
+  var selected = null;
 
   function clear(button) {
     button.setAttribute('aria-pressed', 'false');
@@ -29,6 +23,24 @@
     Object.keys(ACCENT_RING).forEach(function (accent) {
       button.classList.remove(ACCENT_RING[accent]);
     });
+  }
+
+  function labelFor(button) {
+    // The button also holds a Material Symbols glyph, whose "icon name" is
+    // literal text content (e.g. "menu_book") rendered as a ligature — read
+    // only the translated label span, not button.textContent, or that
+    // ligature name leaks into the status message.
+    var labelEl = button.querySelector('[data-i18n]');
+    return labelEl ? labelEl.textContent.trim() : button.textContent.trim();
+  }
+
+  function renderStatus() {
+    if (!status || !selected) return;
+    var lang = (window.Beyahad && window.Beyahad.currentLang) || 'he';
+    var t = window.Beyahad && window.Beyahad.t;
+    var prefix = (t && t(lang, 'poll.statusPrefix')) || '';
+    var suffix = (t && t(lang, 'poll.statusSuffix')) || '';
+    status.textContent = [prefix, labelFor(selected), '·', suffix].filter(Boolean).join(' ');
   }
 
   function select(button, announce) {
@@ -40,11 +52,8 @@
     var ring = ACCENT_RING[button.dataset.pollAccent];
     if (ring) button.classList.add(ring);
 
-    if (status && announce) {
-      // No backend is wired up yet, so don't imply the vote was submitted.
-      status.textContent =
-        'בחרת: ' + button.textContent.trim() + ' · הבחירה נשמרת במכשיר שלך בלבד.';
-    }
+    selected = button;
+    if (announce) renderStatus();
 
     try {
       localStorage.setItem(STORAGE_KEY, button.dataset.pollOption);
@@ -71,4 +80,10 @@
   } catch (err) {
     /* Ignore unavailable storage. */
   }
+
+  // Re-render the status line (and keep the saved label in sync) when the
+  // visitor switches language after already voting.
+  document.addEventListener('beyahad:langchange', function () {
+    if (selected) renderStatus();
+  });
 })();

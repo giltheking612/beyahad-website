@@ -1,7 +1,9 @@
 # ביחד נתקן — אתר הנחיתה
 
-Landing page for the **ביחד נתקן** civic movement. Static site, Hebrew (RTL),
-built from a [Stitch](https://stitch.withgoogle.com) design export.
+Landing page for **Beyachad Netaken** (ביחד נתקן), a political party in
+Israel. Static site, written short for a skim-not-read audience, available in
+Hebrew, Arabic, English and Russian. Built from a
+[Stitch](https://stitch.withgoogle.com) design export.
 
 ## Quick start
 
@@ -29,17 +31,44 @@ npm run build     # one-off minified build
 Edit `src/input.css` for custom CSS and `tailwind.config.js` for tokens.
 **Do not edit `assets/css/styles.css` by hand** — it is generated.
 
+## Languages
+
+The site ships in four languages: Hebrew and Arabic (RTL), English and
+Russian (LTR). A switcher pinned to the physical top-right corner of the
+header (stays there in every language — the usual convention for a language
+picker) lets a visitor change it; the choice is remembered in `localStorage`,
+and a first-time visitor gets their browser's language if it's one of the
+four, Hebrew otherwise.
+
+All copy lives in one place, `assets/js/i18n.js` — there's no copy text in
+`index.html` itself beyond a Hebrew fallback for no-JS/first paint. To add or
+edit copy:
+
+1. Edit the relevant language object in `assets/js/i18n.js` (`he`, `ar`,
+   `en`, `ru` — each one needs every key the others have).
+2. For a **new** piece of copy, add the key to all four language objects,
+   then reference it in `index.html` with `data-i18n="section.key"` (sets
+   `textContent`) or `data-i18n-attr="attr:section.key"` (sets an attribute,
+   e.g. `alt` or a `<meta content>`) — see the existing attributes for the
+   pattern. `assets/js/i18n.js` applies it to every matching element.
+3. Run `npm run build` and reload — no separate i18n build step.
+
+Keep copy short everywhere: this page is written for people who won't read
+a paragraph, so a new string should read as a headline or a single short
+sentence, not a block of text.
+
 ## Layout
 
 ```
-index.html              The page
-src/input.css           Tailwind source + design-system components
-tailwind.config.js      Colour tokens, fonts, radii from DESIGN.md
-assets/css/styles.css   Compiled output (committed, generated)
-assets/js/main.js       Poll interaction + footer year
-assets/img/hero.jpg     Hero photo (saved locally from the Stitch export)
-assets/favicon.svg      Favicon
-design/                 Original Stitch export: DESIGN.md, screen.png, .zip
+index.html              The page — structure + Hebrew fallback text only
+src/input.css            Tailwind source + design-system components (incl. the language switcher)
+tailwind.config.js       Colour tokens, fonts, radii from DESIGN.md
+assets/css/styles.css    Compiled output (committed, generated)
+assets/js/i18n.js        All copy (he/ar/en/ru) + language switching
+assets/js/main.js        Poll interaction (reads i18n.js for translated status text)
+assets/img/hero.jpg      Hero photo (saved locally from the Stitch export)
+assets/favicon.svg       Favicon
+design/                  Original Stitch export: DESIGN.md, screen.png, .zip
 ```
 
 ## Still to wire up

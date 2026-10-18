@@ -71,6 +71,99 @@
   .skip-link:focus {
     top: 1rem;
   }
+
+  /* Language switcher — pinned to the physical top-right corner in every
+     language (not the logical "end" side), so it stays in the same spot
+     whether the page is RTL (he/ar) or LTR (en/ru). This is the usual
+     convention for language pickers and keeps it easy to find. */
+  .lang-switcher {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+
+  @media (min-width: 640px) {
+    .lang-switcher {
+      right: 1rem;
+    }
+  }
+
+  .lang-switcher__toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 9999px;
+    background-color: theme('colors.surface-container');
+    border: 1px solid rgb(220 200 224 / 0.4);
+    color: theme('colors.on-surface-variant');
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 150ms ease-out, color 150ms ease-out;
+  }
+
+  .lang-switcher__toggle:hover {
+    background-color: rgb(255 214 238 / 0.6);
+    color: theme('colors.on-primary-fixed');
+  }
+
+  .lang-switcher__toggle[aria-expanded='true'] {
+    background-color: theme('colors.primary-fixed');
+    color: theme('colors.on-primary-fixed');
+  }
+
+  .lang-switcher__current {
+    min-width: 1.3rem;
+    text-align: center;
+  }
+
+  .lang-switcher__menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 9.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.4rem;
+    border-radius: 1.25rem;
+    background-color: theme('colors.surface-container-lowest');
+    border: 1px solid rgb(220 200 224 / 0.4);
+    box-shadow: 0 8px 24px -4px rgb(224 64 160 / 0.28);
+  }
+
+  .lang-switcher__option {
+    display: block;
+    width: 100%;
+    padding: 0.55rem 0.9rem;
+    border-radius: 0.85rem;
+    text-align: start;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: theme('colors.on-surface');
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 120ms ease-out;
+  }
+
+  .lang-switcher__option:hover,
+  .lang-switcher__option:focus-visible {
+    background-color: rgb(238 220 255 / 0.6);
+  }
+
+  .lang-switcher__option.is-active {
+    background-color: theme('colors.primary-fixed');
+    color: theme('colors.on-primary-fixed');
+    font-weight: 800;
+  }
+
+  .lang-switcher__option.is-active::before {
+    content: '✓ ';
+  }
 }
 
 /* DESIGN.md asks for bouncy motion; honour the OS setting that asks for none. */
