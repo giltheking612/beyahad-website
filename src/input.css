@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Rubik', 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background-color: theme('colors.background');
+    color: theme('colors.on-surface');
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Visible keyboard focus everywhere, in the brand pink. */
+  :focus-visible {
+    outline: 3px solid theme('colors.primary');
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Material Symbols glyph rendering. */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Tinted shadows — DESIGN.md: colorful shadows matching the element colour. */
+  .candy-shadow-primary {
+    box-shadow: 0 8px 24px -4px rgb(224 64 160 / 0.28);
+  }
+
+  .candy-shadow-secondary {
+    box-shadow: 0 8px 24px -4px rgb(124 82 170 / 0.22);
+  }
+
+  .candy-shadow-tertiary {
+    box-shadow: 0 8px 24px -4px rgb(0 150 204 / 0.22);
+  }
+
+  /* Skip link: off-screen until focused. */
+  .skip-link {
+    position: absolute;
+    inset-inline-start: 1rem;
+    top: -4rem;
+    z-index: 100;
+    border-radius: 9999px;
+    background-color: theme('colors.primary');
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    color: theme('colors.on-primary');
+    transition: top 150ms ease-out;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+/* DESIGN.md asks for bouncy motion; honour the OS setting that asks for none. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
