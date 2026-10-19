@@ -11,13 +11,16 @@
   'use strict';
 
   var STORAGE_KEY = 'beyahad:lang';
-  var SUPPORTED = ['he', 'ar', 'en', 'ru'];
+  var SUPPORTED = ['he', 'ar', 'en', 'ru', 'hu'];
 
   var META = {
     he: { dir: 'rtl', short: 'עב', ogLocale: 'he_IL' },
     ar: { dir: 'rtl', short: 'عر', ogLocale: 'ar_IL' },
     en: { dir: 'ltr', short: 'EN', ogLocale: 'en_US' },
     ru: { dir: 'ltr', short: 'RU', ogLocale: 'ru_RU' },
+    // Not an official site language — a just-for-fun extra. See its
+    // comment in TRANSLATIONS below.
+    hu: { dir: 'ltr', short: 'HU', ogLocale: 'hu_HU' },
   };
 
   var TRANSLATIONS = {
@@ -274,6 +277,72 @@
       footer: {
         tagline: 'Только вместе мы исправим Израиль.',
         rights: '© {year} Все права защищены партией «Вместе» во главе с Нафтали Беннетом.',
+      },
+    },
+
+    // Hungarian isn't one of the site's real languages — added as a running
+    // joke, at the request of whoever's reading this comment's friend.
+    hu: {
+      nav: { skip: 'Ugrás a fő tartalomra' },
+      brand: { name: 'Együtt', logoAlt: 'Együtt — Naftali Bennett vezetésével' },
+      site: {
+        title: 'Együtt | Csak együtt hozzuk helyre Izraelt',
+        description: 'Az Együtt párt, Naftali Bennett és Jair Lapid vezetésével. Teherviselési egyenlőség, megélhetési költségek, oktatás és más — valódi helyreállítási tervek, nem szlogenek.',
+      },
+      hero: {
+        dateBadge: 'Választások 2026. október 27-én',
+        titleMain: 'Október 27-én',
+        titleHighlight: 'helyrehozzuk Izraelt',
+        subtitle: 'Csak az Együtt, Naftali Bennett vezetésével, kész a helyreállítási tervekkel és egy tettre kész csapattal.',
+        ctaPlans: 'Tervek megtekintése',
+        pill1: '🪖 Teherviselési egyenlőség',
+        pill2: '💰 ‎-30% megélhetési költség',
+        pill3: '🏠 100 000 lakás',
+      },
+      about: {
+        eyebrow: 'Kik vagyunk',
+        heading: 'Nincs több ígéret. Csak cselekvés.',
+        card1Title: 'Kik vagyunk',
+        card1Text: 'Bennett és Lapid pártjának egyesülése. Új párt, 2026 áprilisában alakult.',
+        card2Title: 'A célunk',
+        card2Text: 'Helyrehozni Izraelt — nincs több szokásos politika, csak végrehajtás.',
+        card3Title: 'A csapat',
+        card3Text: '35 tettre kész ember valódi terepi tapasztalattal, nem karrierpolitikusok.',
+      },
+      plan: {
+        eyebrow: 'Helyreállítási tervek',
+        heading: '6 fő tervünk',
+        subheading: 'Hosszú kiáltványok nélkül. Íme a számok:',
+        card1Title: 'Teherviselési egyenlőség',
+        card1Stat: 'Aki szolgál, az kap',
+        card1Text: 'A besorozás alóli mentesség törvényének eltörlése az első napon. Nincs mentesség, nincs kvóta.',
+        card2Title: 'Megélhetési költségek',
+        card2Stat: '-30% élelmiszerárak 3 év alatt',
+        card2Text: 'Megtörjük az élelmiszer-monopóliumokat, és megnyitjuk a piacot a versenynek.',
+        card3Title: 'Oktatás',
+        card3Stat: '12 000 ₪ kezdő tanári fizetés',
+        card3Text: '100% alaptanterv vagy 0% finanszírozás. A hatalom visszakerül az iskolákhoz.',
+        card4Title: 'Lakhatás',
+        card4Stat: '100 000 bérlakás egy évtized alatt',
+        card4Text: '1 millió ₪ lakáskedvezmény az aktív tartalékosoknak.',
+        card5Title: 'Közlekedés',
+        card5Stat: 'Vonat 10 percenként',
+        card5Text: '200 km új tömegközlekedési sáv — vége a dugóknak.',
+        card6Title: 'Egészségügy',
+        card6Stat: 'Közösségi klinikák országszerte 5 éven belül',
+        card6Text: 'Hazahozzuk az izraeli orvosokat, és csökkentjük a várólistákat.',
+        sourceNote: 'A számok a hivatalos programból származnak. 24 további helyreállítási terv a hivatalos oldalon.',
+        sourceLink: 'Összes helyreállítási terv',
+      },
+      team: {
+        eyebrow: 'A csapat',
+        heading: 'Tettre kész emberek, nem karrierpolitikusok',
+        subheading: '35 jelöltből 20:',
+        seeAll: 'Mind a 35 jelölt megtekintése',
+      },
+      footer: {
+        tagline: 'Csak együtt hozzuk helyre Izraelt.',
+        rights: '© {year} Minden jog fenntartva az Együtt pártnak, Naftali Bennett vezetésével.',
       },
     },
   };

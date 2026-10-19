@@ -12,7 +12,7 @@
     (function () {
       try {
         var saved = localStorage.getItem('beyahad:lang');
-        if (saved === 'en' || saved === 'ru') {
+        if (saved === 'en' || saved === 'ru' || saved === 'hu') {
           document.documentElement.lang = saved;
           document.documentElement.dir = 'ltr';
         } else if (saved === 'ar') {
@@ -93,6 +93,10 @@
           <li role="none">
             <button role="menuitem" type="button" class="lang-switcher__option" data-lang="ru" lang="ru" dir="ltr"
               aria-current="false">Русский</button>
+          </li>
+          <li role="none">
+            <button role="menuitem" type="button" class="lang-switcher__option" data-lang="hu" lang="hu" dir="ltr"
+              aria-current="false">Magyar</button>
           </li>
         </ul>
       </div>
