@@ -12,14 +12,14 @@
   }
 
   body {
-    font-family: 'Rubik', 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: 'Noto Sans Hebrew', 'Noto Sans Arabic', 'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     background-color: theme('colors.background');
     color: theme('colors.on-surface');
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Visible keyboard focus everywhere, in the brand pink. */
+  /* Visible keyboard focus everywhere, in the brand blue. */
   :focus-visible {
     outline: 3px solid theme('colors.primary');
     outline-offset: 3px;
@@ -41,17 +41,23 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Tinted shadows — DESIGN.md: colorful shadows matching the element colour. */
+  /* Tinted shadows, matching each element's own accent colour. */
   .candy-shadow-primary {
-    box-shadow: 0 8px 24px -4px rgb(224 64 160 / 0.28);
+    box-shadow: 0 8px 24px -4px rgb(0 170 255 / 0.28);
   }
 
   .candy-shadow-secondary {
-    box-shadow: 0 8px 24px -4px rgb(124 82 170 / 0.22);
+    box-shadow: 0 8px 24px -4px rgb(10 0 132 / 0.18);
   }
 
   .candy-shadow-tertiary {
-    box-shadow: 0 8px 24px -4px rgb(0 150 204 / 0.22);
+    box-shadow: 0 8px 24px -4px rgb(255 75 0 / 0.24);
+  }
+
+  /* Hero background — the same dark-navy-to-light gradient used on the
+     official site, rather than a stock photo. */
+  .hero-gradient {
+    background: linear-gradient(180deg, #0a0f2e 0%, #2d2d55 28%, #6d6f8f 60%, #dadde4 100%);
   }
 
   /* Skip link: off-screen until focused. */
@@ -97,7 +103,7 @@
     padding: 0.4rem 0.6rem;
     border-radius: 9999px;
     background-color: theme('colors.surface-container');
-    border: 1px solid rgb(220 200 224 / 0.4);
+    border: 1px solid rgb(204 212 224 / 0.6);
     color: theme('colors.on-surface-variant');
     font-weight: 700;
     font-size: 0.8rem;
@@ -107,7 +113,7 @@
   }
 
   .lang-switcher__toggle:hover {
-    background-color: rgb(255 214 238 / 0.6);
+    background-color: rgb(214 240 255 / 0.8);
     color: theme('colors.on-primary-fixed');
   }
 
@@ -131,8 +137,8 @@
     padding: 0.4rem;
     border-radius: 1.25rem;
     background-color: theme('colors.surface-container-lowest');
-    border: 1px solid rgb(220 200 224 / 0.4);
-    box-shadow: 0 8px 24px -4px rgb(224 64 160 / 0.28);
+    border: 1px solid rgb(204 212 224 / 0.6);
+    box-shadow: 0 8px 24px -4px rgb(10 15 30 / 0.2);
   }
 
   .lang-switcher__option {
@@ -152,7 +158,7 @@
 
   .lang-switcher__option:hover,
   .lang-switcher__option:focus-visible {
-    background-color: rgb(238 220 255 / 0.6);
+    background-color: rgb(227 224 255 / 0.7);
   }
 
   .lang-switcher__option.is-active {
@@ -164,9 +170,76 @@
   .lang-switcher__option.is-active::before {
     content: '✓ ';
   }
+
+  /* Candidate cards (team-data.js + team.js build these into the DOM). */
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    background-color: theme('colors.surface-container-lowest');
+    border: 1px solid rgb(204 212 224 / 0.6);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px -8px rgb(10 15 30 / 0.16);
+  }
+
+  .team-card__photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: theme('colors.surface-container-high');
+  }
+
+  .team-card__body {
+    padding: 1.1rem 1.25rem 1.35rem;
+  }
+
+  .team-card__name {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: theme('colors.on-surface');
+    margin-bottom: 0.15rem;
+  }
+
+  .team-card__meta {
+    font-size: 0.82rem;
+    color: theme('colors.on-surface-variant');
+    margin-bottom: 0.6rem;
+  }
+
+  .team-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .team-card__tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    background-color: theme('colors.primary-fixed');
+    color: theme('colors.on-primary-fixed');
+  }
+
+  .team-card__bio {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: theme('colors.on-surface-variant');
+  }
+
+  /* Compact cards (candidates 11–20): smaller photo, no bio. */
+  .team-card--compact .team-card__body {
+    padding: 0.8rem 0.9rem 1rem;
+  }
+
+  .team-card--compact .team-card__name--sm {
+    font-size: 0.92rem;
+  }
 }
 
-/* DESIGN.md asks for bouncy motion; honour the OS setting that asks for none. */
+/* The real site leans on bold motion; honour the OS setting that asks for none. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -24,28 +24,29 @@
     })();
   </script>
 
-  <title data-i18n="site.title">ביחד נתקן | תנועה אזרחית לישראל</title>
-  <meta name="description" content="תנועה אזרחית צעירה. חינוך, יוקר מחיה ואחדות — בלי סיסמאות, רק עשייה."
+  <title data-i18n="site.title">ביחד | רק ביחד נתקן את ישראל</title>
+  <meta name="description" content="מפלגת ביחד בראשות נפתלי בנט ויאיר לפיד. שוויון בנטל, יוקר מחיה, חינוך ועוד — תוכניות תיקון, לא סיסמאות."
     data-i18n-attr="content:site.description">
-  <meta name="theme-color" content="#e040a0">
+  <meta name="theme-color" content="#00aaff">
 
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
-  <meta property="og:site_name" content="ביחד נתקן">
-  <meta property="og:title" content="ביחד נתקן | תנועה אזרחית לישראל" data-i18n-attr="content:site.title">
-  <meta property="og:description" content="תנועה אזרחית צעירה. חינוך, יוקר מחיה ואחדות — בלי סיסמאות, רק עשייה."
+  <meta property="og:site_name" content="ביחד">
+  <meta property="og:title" content="ביחד | רק ביחד נתקן את ישראל" data-i18n-attr="content:site.title">
+  <meta property="og:description" content="מפלגת ביחד בראשות נפתלי בנט ויאיר לפיד. שוויון בנטל, יוקר מחיה, חינוך ועוד — תוכניות תיקון, לא סיסמאות."
     data-i18n-attr="content:site.description">
-  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta property="og:image" content="assets/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
 
-  <!-- Fonts -->
+  <!-- Fonts: Noto Sans Hebrew + Arabic + base (Latin/Cyrillic) — one stack
+       covering all four languages. See README re: the real site's font. -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Rubik:wght@400;500;600;700;800;900&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400..900;1,400..900&family=Noto+Sans+Hebrew:wght@400..900&family=Noto+Sans+Arabic:wght@400..900&display=swap">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
 
@@ -60,15 +61,12 @@
   <!-- ========== TOP APP BAR ========== -->
   <header
     class="bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm shadow-primary/10 w-full top-0 sticky z-50 transition-all duration-200">
-    <div
-      class="relative flex items-center w-full pl-4 pr-[4.5rem] sm:pl-6 sm:pr-[5.75rem] py-3 max-w-7xl mx-auto justify-center">
+    <div class="relative flex items-center w-full pl-4 pr-[4.5rem] sm:pl-6 sm:pr-[5.75rem] py-2.5 max-w-7xl mx-auto justify-center">
       <a class="flex items-center justify-center gap-2 sm:gap-3 py-1 rounded-full min-w-0" href="#main">
-        <span
-          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-inner shrink-0">
-          <span aria-hidden="true" class="material-symbols-outlined text-xl sm:text-2xl font-bold">auto_awesome</span>
-        </span>
-        <span class="font-headline text-lg sm:text-2xl font-black text-primary tracking-tight leading-tight"
-          data-i18n="brand.name">ביחד נתקן</span>
+        <img class="h-10 w-10 sm:h-11 sm:w-11 rounded-xl shrink-0" src="assets/img/logo.png" alt=""
+          data-i18n-attr="alt:brand.logoAlt">
+        <span class="font-headline text-lg sm:text-2xl font-black text-secondary tracking-tight leading-tight"
+          data-i18n="brand.name">ביחד</span>
       </a>
 
       <!-- Language switcher — always pinned to the physical top-right corner. -->
@@ -104,81 +102,58 @@
   <main id="main">
 
     <!-- ========== HERO ========== -->
-    <section class="relative pt-8 pb-14 px-4 sm:px-6 max-w-5xl mx-auto text-center overflow-hidden">
+    <section class="hero-gradient relative px-4 sm:px-6 pt-10 pb-16 text-center overflow-hidden">
+      <div class="max-w-4xl mx-auto">
 
-      <!-- Decorative ambient glows -->
-      <div aria-hidden="true"
-        class="absolute -top-12 right-1/2 translate-x-1/2 w-80 h-80 bg-primary-fixed/50 rounded-full blur-3xl -z-10 pointer-events-none">
+        <p
+          class="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-inverse-on-surface backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          <span aria-hidden="true" class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+          <span data-i18n="hero.dateBadge">הבחירות ב-27 באוקטובר 2026</span>
+        </p>
+
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-black text-inverse-on-surface leading-[1.15] mb-4 max-w-3xl mx-auto tracking-tight">
+          <span data-i18n="hero.titleMain">ב-27 באוקטובר</span>
+          <span class="text-primary" data-i18n="hero.titleHighlight">מתקנים את ישראל</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-inverse-on-surface/80 font-medium leading-relaxed max-w-xl mx-auto mb-8"
+          data-i18n="hero.subtitle">
+          רק ביחד, בראשות נפתלי בנט, מוכנים עם תוכניות תיקון ונבחרת של ביצועיסטים.
+        </p>
+
+        <!-- Primary calls to action -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+          <a class="w-full sm:w-auto px-8 py-4 bg-tertiary text-on-tertiary rounded-full text-lg font-bold hover:brightness-110 hover:scale-105 active:scale-95 transition-transform flex items-center justify-center gap-2"
+            href="https://be-yahad.org.il/#footer-form" rel="noopener" target="_blank">
+            <span data-i18n="hero.ctaJoin">להצטרף</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-xl rtl:-scale-x-100">arrow_forward</span>
+          </a>
+          <a class="w-full sm:w-auto px-8 py-4 bg-white/10 border border-white/30 text-inverse-on-surface rounded-full text-lg font-bold hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
+            href="#plan-section">
+            <span data-i18n="hero.ctaPlans">לתוכניות התיקון</span>
+          </a>
+        </div>
+
+        <!-- Headline-stat pills -->
+        <ul class="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl mx-auto list-none p-0">
+          <li
+            class="px-4 py-2 bg-white/10 border border-white/20 text-inverse-on-surface rounded-full text-sm font-bold">
+            <span data-i18n="hero.pill1">🪖 שוויון בנטל</span>
+          </li>
+          <li
+            class="px-4 py-2 bg-white/10 border border-white/20 text-inverse-on-surface rounded-full text-sm font-bold">
+            <span data-i18n="hero.pill2">💰 ‎-30% יוקר מחיה</span>
+          </li>
+          <li
+            class="px-4 py-2 bg-white/10 border border-white/20 text-inverse-on-surface rounded-full text-sm font-bold">
+            <span data-i18n="hero.pill3">🏠 100,000 דירות</span>
+          </li>
+        </ul>
       </div>
-      <div aria-hidden="true"
-        class="absolute top-40 -left-12 w-64 h-64 bg-tertiary-fixed/60 rounded-full blur-3xl -z-10 pointer-events-none">
-      </div>
-
-      <p
-        class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed-variant px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-sm">
-        <span aria-hidden="true" class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
-        <span data-i18n="hero.badge">תנועה אזרחית אמיתית, מלמטה</span>
-      </p>
-
-      <h1
-        class="text-4xl sm:text-5xl md:text-6xl font-black text-on-surface leading-[1.15] mb-4 max-w-3xl mx-auto tracking-tight">
-        <span data-i18n="hero.titleMain">תיקון המדינה.</span>
-        <span class="text-primary" data-i18n="hero.titleHighlight">מתחילים עכשיו.</span>
-      </h1>
-
-      <p class="text-lg sm:text-xl text-on-surface-variant font-medium leading-relaxed max-w-xl mx-auto mb-6"
-        data-i18n="hero.subtitle">
-        חינוך. יוקר מחיה. אחדות. בלי סיסמאות — רק עשייה.
-      </p>
-
-      <!-- Primary call to action -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-        <a class="w-full sm:w-auto px-8 py-4 bg-surface-container-lowest text-secondary border border-outline-variant/40 rounded-full text-lg font-bold hover:bg-secondary-fixed/30 candy-shadow-secondary hover:scale-105 active:scale-95 transition-transform flex items-center justify-center gap-2"
-          href="#plan-section">
-          <span data-i18n="hero.cta">המצע ב-60 שניות</span>
-          <span aria-hidden="true" class="material-symbols-outlined text-xl">menu_book</span>
-        </a>
-      </div>
-
-      <!-- Value pills -->
-      <ul class="flex flex-wrap items-center justify-center gap-2.5 max-w-xl mx-auto list-none p-0">
-        <li
-          class="px-4 py-2 bg-primary-fixed text-on-primary-fixed rounded-full text-sm font-bold shadow-sm hover:scale-105 transition-transform">
-          <span data-i18n="hero.pill1">⚡ חינוך מודרני</span>
-        </li>
-        <li
-          class="px-4 py-2 bg-secondary-fixed text-on-secondary-fixed rounded-full text-sm font-bold shadow-sm hover:scale-105 transition-transform">
-          <span data-i18n="hero.pill2">📱 שקיפות מלאה</span>
-        </li>
-        <li
-          class="px-4 py-2 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-sm font-bold shadow-sm hover:scale-105 transition-transform">
-          <span data-i18n="hero.pill3">🤝 שוויון אמיתי</span>
-        </li>
-      </ul>
-
-      <!-- Hero image -->
-      <figure
-        class="mt-12 relative rounded-3xl overflow-hidden shadow-2xl border-4 border-surface-container-lowest max-w-4xl mx-auto group">
-        <img class="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-102 transition-transform duration-500"
-          src="assets/img/hero.jpg" width="1408" height="768"
-          alt="פעילי ופעילות ביחד נתקן בשיחה עם אזרחים ואזרחיות בכיכר עירונית, סביב דוכן התנועה."
-          data-i18n-attr="alt:hero.imageAlt">
-        <figcaption
-          class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-6 sm:p-8 text-end">
-          <span>
-            <span class="bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full mb-2 inline-block"
-              data-i18n="hero.imageBadge">
-              קולות מהשטח
-            </span>
-            <span class="block text-inverse-on-surface text-xl sm:text-2xl font-bold" data-i18n="hero.imageCaption">
-              מנהיגות אמיתית. היום.
-            </span>
-          </span>
-        </figcaption>
-      </figure>
     </section>
 
-    <!-- ========== מי אנחנו? ========== -->
+    <!-- ========== מי אנחנו ========== -->
     <section class="py-16 bg-surface-container-low px-4 sm:px-6" id="about-section">
       <div class="max-w-5xl mx-auto">
 
@@ -186,9 +161,10 @@
           <span
             class="text-secondary font-bold text-xs sm:text-sm tracking-wider bg-secondary-fixed px-4 py-1.5 rounded-full inline-block mb-2"
             data-i18n="about.eyebrow">
-            ב-10 שניות
+            מי אנחנו
           </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-on-surface" data-i18n="about.heading">מי אנחנו? ⚡</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-on-surface" data-i18n="about.heading">לא עוד הבטחות. רק
+            ביצוע.</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -197,11 +173,11 @@
             class="bg-surface-container-lowest p-6 rounded-3xl candy-shadow-primary border border-outline-variant/30 text-center flex flex-col items-center">
             <span
               class="w-14 h-14 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center mb-4">
-              <span aria-hidden="true" class="material-symbols-outlined text-3xl">group</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-3xl">handshake</span>
             </span>
             <h3 class="text-xl font-black text-on-surface mb-2" data-i18n="about.card1Title">מי אנחנו</h3>
             <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="about.card1Text">
-              אזרחים. לא פוליטיקאים.
+              מיזוג של בנט ולפיד. מפלגה חדשה שהוקמה באפריל 2026.
             </p>
           </article>
 
@@ -213,7 +189,7 @@
             </span>
             <h3 class="text-xl font-black text-on-surface mb-2" data-i18n="about.card2Title">המטרה</h3>
             <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="about.card2Text">
-              לתקן מה ששבור.
+              לתקן את ישראל – לא עוד עסקנות, רק ביצוע.
             </p>
           </article>
 
@@ -221,11 +197,11 @@
             class="bg-surface-container-lowest p-6 rounded-3xl candy-shadow-tertiary border border-outline-variant/30 text-center flex flex-col items-center">
             <span
               class="w-14 h-14 rounded-2xl bg-tertiary-fixed text-tertiary flex items-center justify-center mb-4">
-              <span aria-hidden="true" class="material-symbols-outlined text-3xl">verified_user</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-3xl">groups</span>
             </span>
-            <h3 class="text-xl font-black text-on-surface mb-2" data-i18n="about.card3Title">למה אנחנו</h3>
+            <h3 class="text-xl font-black text-on-surface mb-2" data-i18n="about.card3Title">הנבחרת</h3>
             <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="about.card3Text">
-              100% שקיפות. תמיד.
+              35 ביצועיסטים עם ניסיון אמיתי בשטח, לא עסקנים.
             </p>
           </article>
 
@@ -233,32 +209,34 @@
       </div>
     </section>
 
-    <!-- ========== תוכנית התיקון הלאומית ========== -->
+    <!-- ========== תוכניות התיקון ========== -->
     <section class="py-16 px-4 sm:px-6 max-w-6xl mx-auto" id="plan-section">
 
       <div class="text-center mb-8">
         <span
           class="text-primary font-bold text-xs sm:text-sm tracking-wider bg-primary-fixed px-4 py-1.5 rounded-full inline-block mb-2"
           data-i18n="plan.eyebrow">
-          תכל'ס
+          תוכניות תיקון
         </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-on-surface" data-i18n="plan.heading">3 דברים שאנחנו עושים</h2>
+        <h2 class="text-3xl sm:text-4xl font-black text-on-surface" data-i18n="plan.heading">6 התוכניות המרכזיות שלנו
+        </h2>
         <p class="text-on-surface-variant max-w-xl mx-auto mt-2 text-sm sm:text-base" data-i18n="plan.subheading">
-          בלי מגילות ארוכות. רק זה:
+          בלי מגילות ארוכות. תכל'ס, עם מספרים:
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
 
         <article
           class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 candy-shadow-primary relative overflow-hidden">
           <span aria-hidden="true" class="absolute top-0 end-0 w-2 h-full bg-primary"></span>
           <span class="w-12 h-12 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center mb-3">
-            <span aria-hidden="true" class="material-symbols-outlined text-2xl">school</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-2xl">military_tech</span>
           </span>
-          <h3 class="text-xl font-bold text-on-surface mb-2" data-i18n="plan.card1Title">חינוך שעובד</h3>
+          <h3 class="text-lg font-bold text-on-surface mb-1" data-i18n="plan.card1Title">שוויון בנטל</h3>
+          <p class="text-primary font-black text-base mb-1" data-i18n="plan.card1Stat">מי שמשרת, מקבל</p>
           <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="plan.card1Text">
-            פחות לחץ, יותר למידה אמיתית.
+            מבטלים את חוק ההשתמטות ביום הראשון. בלי פטורים, בלי מכסות.
           </p>
         </article>
 
@@ -268,9 +246,10 @@
           <span class="w-12 h-12 rounded-2xl bg-tertiary-fixed text-tertiary flex items-center justify-center mb-3">
             <span aria-hidden="true" class="material-symbols-outlined text-2xl">payments</span>
           </span>
-          <h3 class="text-xl font-bold text-on-surface mb-2" data-i18n="plan.card2Title">מחירים הוגנים</h3>
+          <h3 class="text-lg font-bold text-on-surface mb-1" data-i18n="plan.card2Title">יוקר המחיה</h3>
+          <p class="text-tertiary font-black text-base mb-1" data-i18n="plan.card2Stat">-30% על הסל תוך 3 שנים</p>
           <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="plan.card2Text">
-            שוברים מונופולים. מוזילים חיים.
+            שוברים את המונופולים על המזון ופותחים את השוק לתחרות.
           </p>
         </article>
 
@@ -278,52 +257,118 @@
           class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 candy-shadow-secondary relative overflow-hidden">
           <span aria-hidden="true" class="absolute top-0 end-0 w-2 h-full bg-secondary"></span>
           <span class="w-12 h-12 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center mb-3">
-            <span aria-hidden="true" class="material-symbols-outlined text-2xl">diversity_3</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-2xl">school</span>
           </span>
-          <h3 class="text-xl font-bold text-on-surface mb-2" data-i18n="plan.card3Title">חברה מחוברת</h3>
+          <h3 class="text-lg font-bold text-on-surface mb-1" data-i18n="plan.card3Title">חינוך</h3>
+          <p class="text-secondary font-black text-base mb-1" data-i18n="plan.card3Stat">12,000 ₪ שכר התחלתי למורה</p>
           <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="plan.card3Text">
-            פחות שנאה, יותר שיח.
+            100% לימודי ליבה או 0% תקצוב. מחזירים סמכות לבתי הספר.
+          </p>
+        </article>
+
+        <article
+          class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 candy-shadow-primary relative overflow-hidden">
+          <span aria-hidden="true" class="absolute top-0 end-0 w-2 h-full bg-primary"></span>
+          <span class="w-12 h-12 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center mb-3">
+            <span aria-hidden="true" class="material-symbols-outlined text-2xl">home</span>
+          </span>
+          <h3 class="text-lg font-bold text-on-surface mb-1" data-i18n="plan.card4Title">דיור</h3>
+          <p class="text-primary font-black text-base mb-1" data-i18n="plan.card4Stat">100,000 דירות להשכרה בעשור</p>
+          <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="plan.card4Text">
+            מיליון ₪ הנחה לדירה למשרתי מילואים פעילים.
+          </p>
+        </article>
+
+        <article
+          class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 candy-shadow-tertiary relative overflow-hidden">
+          <span aria-hidden="true" class="absolute top-0 end-0 w-2 h-full bg-tertiary"></span>
+          <span class="w-12 h-12 rounded-2xl bg-tertiary-fixed text-tertiary flex items-center justify-center mb-3">
+            <span aria-hidden="true" class="material-symbols-outlined text-2xl">directions_bus</span>
+          </span>
+          <h3 class="text-lg font-bold text-on-surface mb-1" data-i18n="plan.card5Title">תחבורה</h3>
+          <p class="text-tertiary font-black text-base mb-1" data-i18n="plan.card5Stat">רכבת כל 10 דקות</p>
+          <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="plan.card5Text">
+            200 ק"מ נתיבי תחבורה ציבורית חדשים, בלי עוד פקקים.
+          </p>
+        </article>
+
+        <article
+          class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 candy-shadow-secondary relative overflow-hidden">
+          <span aria-hidden="true" class="absolute top-0 end-0 w-2 h-full bg-secondary"></span>
+          <span class="w-12 h-12 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center mb-3">
+            <span aria-hidden="true" class="material-symbols-outlined text-2xl">local_hospital</span>
+          </span>
+          <h3 class="text-lg font-bold text-on-surface mb-1" data-i18n="plan.card6Title">בריאות</h3>
+          <p class="text-secondary font-black text-base mb-1" data-i18n="plan.card6Stat">מרפאות קהילתיות בכל הארץ תוך 5
+            שנים</p>
+          <p class="text-on-surface-variant text-sm font-medium leading-relaxed" data-i18n="plan.card6Text">
+            מחזירים רופאים ישראלים הביתה ומקצרים את ההמתנה.
           </p>
         </article>
 
       </div>
 
-      <!-- Priorities poll -->
-      <div
-        class="bg-surface-container-lowest border-2 border-primary-fixed p-6 sm:p-8 rounded-3xl candy-shadow-primary max-w-2xl mx-auto text-center">
-        <p
-          class="inline-flex items-center gap-1.5 text-primary font-bold text-sm bg-primary-fixed px-3 py-1 rounded-full mb-3">
-          <span aria-hidden="true" class="material-symbols-outlined text-base">how_to_vote</span>
-          <span data-i18n="poll.eyebrow">ההצבעה שלך</span>
-        </p>
-        <h3 class="text-xl sm:text-2xl font-black text-on-surface mb-2" id="poll-question" data-i18n="poll.question">
-          מה הכי דחוף מבחינתך?
-        </h3>
-        <p class="text-on-surface-variant text-xs sm:text-sm mb-5" data-i18n="poll.subtext">
-          בחר/י עכשיו:
-        </p>
+      <p class="text-center text-xs text-on-surface-variant">
+        <span data-i18n="plan.sourceNote">המספרים מהמצע הרשמי. 24 תוכניות תיקון נוספות באתר הרשמי.</span>
+        <a class="text-primary font-bold underline hover:no-underline" href="https://be-yahad.org.il/plans/"
+          rel="noopener" target="_blank" data-i18n="plan.sourceLink">לכל תוכניות התיקון</a>
+      </p>
+    </section>
 
-        <div aria-labelledby="poll-question" class="grid grid-cols-1 sm:grid-cols-3 gap-3" data-poll role="group">
-          <button aria-pressed="false" data-poll-option="education" data-poll-accent="primary" type="button"
-            class="p-3.5 bg-surface-container text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed rounded-2xl font-bold text-sm border border-outline-variant/40 transition-all flex flex-col items-center gap-1.5 active:scale-95">
-            <span aria-hidden="true" class="material-symbols-outlined text-2xl text-primary">menu_book</span>
-            <span data-i18n="poll.option1">📚 חינוך</span>
-          </button>
+    <!-- ========== הנבחרת ========== -->
+    <section class="py-16 bg-surface-container-low px-4 sm:px-6" id="team-section">
+      <div class="max-w-6xl mx-auto">
 
-          <button aria-pressed="false" data-poll-option="cost-of-living" data-poll-accent="tertiary" type="button"
-            class="p-3.5 bg-surface-container text-on-surface hover:bg-tertiary-fixed hover:text-on-tertiary-fixed rounded-2xl font-bold text-sm border border-outline-variant/40 transition-all flex flex-col items-center gap-1.5 active:scale-95">
-            <span aria-hidden="true" class="material-symbols-outlined text-2xl text-tertiary">savings</span>
-            <span data-i18n="poll.option2">💰 מחירים</span>
-          </button>
-
-          <button aria-pressed="false" data-poll-option="tolerance" data-poll-accent="secondary" type="button"
-            class="p-3.5 bg-surface-container text-on-surface hover:bg-secondary-fixed hover:text-on-secondary-fixed rounded-2xl font-bold text-sm border border-outline-variant/40 transition-all flex flex-col items-center gap-1.5 active:scale-95">
-            <span aria-hidden="true" class="material-symbols-outlined text-2xl text-secondary">forum</span>
-            <span data-i18n="poll.option3">🤝 חברה</span>
-          </button>
+        <div class="text-center mb-8">
+          <span
+            class="text-secondary font-bold text-xs sm:text-sm tracking-wider bg-secondary-fixed px-4 py-1.5 rounded-full inline-block mb-2"
+            data-i18n="team.eyebrow">
+            הנבחרת
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-on-surface" data-i18n="team.heading">ביצועיסטים, לא עסקנים
+          </h2>
+          <p class="text-on-surface-variant max-w-xl mx-auto mt-2 text-sm sm:text-base" data-i18n="team.subheading">
+            20 מתוך 35 חברי הנבחרת:
+          </p>
         </div>
 
-        <p class="text-on-surface-variant text-xs mt-4" data-poll-status role="status"></p>
+        <!-- Candidates 1–10: full bios. Rendered by assets/js/team.js. -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8" data-team-full></div>
+
+        <!-- Candidates 11–20: compact cards. -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8" data-team-compact></div>
+
+        <p class="text-center">
+          <a class="inline-flex items-center gap-1.5 text-secondary font-bold underline hover:no-underline"
+            href="https://be-yahad.org.il/team/" rel="noopener" target="_blank" data-i18n="team.seeAll">
+            לכל 35 חברי הנבחרת
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== הצטרפות ========== -->
+    <section class="py-16 px-4 sm:px-6">
+      <div
+        class="max-w-2xl mx-auto bg-secondary text-on-secondary rounded-3xl p-8 sm:p-10 text-center candy-shadow-secondary">
+        <p class="inline-flex items-center gap-1.5 text-primary-fixed font-bold text-sm mb-3">
+          <span aria-hidden="true" class="material-symbols-outlined text-base">favorite</span>
+          <span data-i18n="cta.eyebrow">מצטרפים?</span>
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-black mb-3" data-i18n="cta.heading">רק ביחד נתקן. בואו גם אתם.</h2>
+        <p class="text-secondary-fixed/90 text-sm sm:text-base mb-6" data-i18n="cta.text">
+          הצטרפות או התנדבות לוקחות דקה, והן באתר הרשמי של המפלגה.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a class="w-full sm:w-auto px-7 py-3.5 bg-tertiary text-on-tertiary rounded-full font-bold hover:brightness-110 hover:scale-105 active:scale-95 transition-transform"
+            href="https://be-yahad.org.il/#footer-form" rel="noopener" target="_blank" data-i18n="cta.joinBtn">
+            להצטרף
+          </a>
+          <a class="w-full sm:w-auto px-7 py-3.5 bg-white/10 border border-white/30 rounded-full font-bold hover:bg-white/20 transition-colors"
+            href="https://be-yahad.org.il/volunteer/" rel="noopener" target="_blank" data-i18n="cta.volunteerBtn">
+            להתנדב
+          </a>
+        </div>
       </div>
     </section>
 
@@ -333,22 +378,27 @@
   <footer class="bg-inverse-surface text-inverse-on-surface py-12 px-6">
     <div
       class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-end">
-      <div>
-        <p class="font-headline text-2xl font-black text-primary-fixed-dim tracking-tight mb-2" data-i18n="brand.name">
-          ביחד נתקן
-        </p>
-        <p class="text-sm text-surface-dim max-w-sm" data-i18n="footer.tagline">
-          לתקן ביחד. להתחיל עכשיו.
-        </p>
+      <div class="flex flex-col md:flex-row items-center gap-3">
+        <img class="h-10 w-10 rounded-xl" src="assets/img/logo.png" alt="" data-i18n-attr="alt:brand.logoAlt">
+        <div>
+          <p class="font-headline text-2xl font-black text-primary-fixed-dim tracking-tight mb-1"
+            data-i18n="brand.name">
+            ביחד
+          </p>
+          <p class="text-sm text-surface-dim max-w-sm" data-i18n="footer.tagline">
+            רק ביחד נתקן את ישראל.
+          </p>
+        </div>
       </div>
       <p class="text-xs text-outline" data-i18n="footer.rights">
-        © 2025 כל הזכויות שמורות למפלגת ביחד נתקן.
+        © 2025 כל הזכויות שמורות למפלגת ביחד בראשות נפתלי בנט.
       </p>
     </div>
   </footer>
 
   <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/team-data.js"></script>
+  <script src="assets/js/team.js"></script>
 </body>
 
 </html>
